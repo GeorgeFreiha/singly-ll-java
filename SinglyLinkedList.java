@@ -59,6 +59,64 @@ public class SinglyLinkedList {
     }
     System.out.println("\n");
   }
+
+  // Search for a node
+  public boolean searchNode(int nodeValue) {
+    if(head != null) {
+      Node tempNode = head;
+      for(int i = 0; i < size; i++) {
+        if(tempNode.value == nodeValue) {
+          System.out.print("Found the node at location: " + i + "\n");
+          return true;                // }-->O(N) time and O(1) space
+        }
+        tempNode = tempNode.next;
+      }
+    }
+    System.out.print("Node not found");
+    return false;
+  }
+
+  // Delete a node
+  public void deletionOfNode(int location) {
+    if(head == null) {
+      System.out.print("The SLL does not exits");
+      return;
+    }else if(location == 0) { //delete a node found at the beginning
+      head = head.next;
+      size--;
+      if(size == 0) {
+        tail = null;
+      }
+    }else if(location >= size){ //delete a node found at the end
+      Node tempNode = head;
+      for(int i = 0; i < size; i++){
+        tempNode = tempNode.next;                             // }-> O(N) time and O(1) for space
+      }
+      if(tempNode == head) { //if we have one element
+        tail = head = null;
+        size--;
+        return;
+      }
+      tempNode.next = null; //if we have more than one element
+      tail = tempNode;
+      size--;
+    }else {
+      Node tempNode = head;
+      for(int i = 0; i < location -1 ; i++) {
+        tempNode = tempNode.next;
+      }
+      tempNode.next = tempNode.next.next;
+      size--;
+    }
+  }
+
+  //Delete entire Singly Linked List
+
+  public void deleteSLL() {
+    head = null;                           ///O(1) time and space
+    tail = null;
+    System.out.println("The SLL was deleted successfully");
+  }
   
 
 }
