@@ -42,4 +42,23 @@ public class SinglyLinkedList {
     size++;
   }
 
+  // SinglyLinkedList Traversal
+  public void traverseSinglyLinkedList() {
+    if(head == null) { 
+      System.out.println("SLL does not exit"); //O(1)
+    } else{
+      Node tempNode = head; //O(1)
+      for(int i = 0; i < size; i++){ //O(N)                }-->O(N) time and O(1)
+        System.out.print(tempNode.value);
+        if(i != size -1) {
+          //print an arrow if we did not reach the end
+          System.out.print(" --> ");
+        }
+        tempNode = tempNode.next;
+      }
+    }
+    System.out.println("\n");
+  }
+  
+
 }

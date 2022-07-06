@@ -5,6 +5,10 @@ class Main {
     
     sLL.insertInLinkedList(6, 1);
     sLL.insertInLinkedList(7, 3);
-    System.out.print(sLL.tail.value);
+    // System.out.print(sLL.tail.value);
+    sLL.insertInLinkedList(8, 4);
+    sLL.insertInLinkedList(9, 0);
+    sLL.traverseSinglyLinkedList();
+    
   }
 }
