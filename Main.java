@@ -2,6 +2,9 @@ class Main {
   public static void main(String[] args) {
     SinglyLinkedList sLL = new SinglyLinkedList();
     sLL.createSinglyLinkedList(5);
-    System.out.print(sLL.head.value);
+    
+    sLL.insertInLinkedList(6, 1);
+    sLL.insertInLinkedList(7, 3);
+    System.out.print(sLL.tail.value);
   }
 }
